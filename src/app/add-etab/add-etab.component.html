@@ -1,0 +1,57 @@
+<div class="container">
+    <div>
+    <h2>Ajouter une Etablissement :</h2>
+    </div>
+    <form >
+
+        <div  hidden class="col-sm-2 col-md-2 col-lg-2">
+        <label >ID Itablissement</label>
+        <input type="number" [(ngModel)]="newEtablissement.idItabli"  name="iditabli" class="form-control">
+        </div>
+
+        <div class="col-sm-4 col-md-4 col-lg-4" >
+        <label >Adresse</label>
+        <input type="text"[(ngModel)]= "newEtablissement.adresse" name="adresse" class="form-control">
+        </div>
+
+        <div class="col-sm-2 col-md-2 col-lg-2">
+        <label >Nom directeur</label>
+        <input type="text" [(ngModel)]= "newEtablissement.nomDirecteur" name="nomdirecteur" class="form-control">
+        </div>
+
+        <div class="col-sm-4 col-md-4 col-lg-4">
+        <label >Nom Etablissement</label>
+        <input type="text" [(ngModel)]= "newEtablissement.nomEtab" name="nometab" class="form-control">
+        </div>
+
+        <div class="col-sm-4 col-md-4 col-lg-4" >
+        <label >Ville</label>
+        <input type="text"[(ngModel)]= "newEtablissement.ville" name="ville" class="form-control">
+        </div>
+
+        <div class="col-sm-4 col-md-4 col-lg-4" >
+            <label >ID de l'employe</label>
+            <input type="number"[(ngModel)]= "newEtablissement.employeid" name="employeid" class="form-control">
+            </div>  
+            
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <label>Employe </label>
+                <select class="form-control form-control-lg" id="id" name="id" [(ngModel)]="newId">
+                 <option *ngFor="let empl of employes " [value]="empl.id" >
+                {{empl.nom}}
+                 </option>
+                </select>
+                </div>
+       
+
+        <div class="mt-2">
+        <button type="submit" (click)="addEtablissement()"class="btn btn-success">Ajouter</button>
+        
+        <div class="msg">
+       
+        </div>
+    
+    </div>
+        </form>
+        </div>
+            

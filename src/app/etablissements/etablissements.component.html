@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="card shadow mb-4">
+    <div class="card-body">
+    <table class="table table-striped">
+    <tr> 
+        <th>id </th>
+        <th>adresse </th>
+         <th>nom directeur</th> 
+         <th>nom Etablissement</th>
+         <th>ville</th>
+         <th>id de l'employe </th>
+         <th>Employe</th>
+         <th>Supprimer etablissement </th>
+         <th>Modifier cordonnées </th>    
+        </tr>
+
+    <tbody *ngFor="let etablissement of etablissements">
+    <tr >
+    <td>{{etablissement.idItabli}}</td>
+    <td>{{etablissement.adresse}}</td>
+    <td>{{etablissement.nomDirecteur}}</td>
+    <td>{{etablissement.nomEtab }}</td>
+    <td>{{etablissement.ville }}</td>
+    <td>{{etablissement.employeid }}</td>
+    <td>{{etablissement?.employe?.nom }}</td>
+
+    <td><a class="btn btn-danger" (click)="supprimerEtablissement(etablissement)" >Supprimer</a></td>
+    <td><a class="btn btn-success" [routerLink]="['/updateEtablissement',etablissement.idItabli]">Modifier</a></td>
+
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
